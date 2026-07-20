@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أحمد س.ع - بحثاً عن شريكة الحياة</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1a4c44; /* وقار - أخضر داكن مائل للزرقة */
+            --secondary-color: #c9a227; /* بهجة وحضور - ذهبي */
+            --bg-color: #fbf9f4; /* دفء - أبيض مائل للبيج */
+            --text-color: #333333;
+            --light-text: #666666;
+            --card-bg: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.8;
+        }
+
+        /* Header Design - Vibrant & Dignified */
+        header {
+            min-height: 550px;
+            background: linear-gradient(rgba(26, 76, 68, 0.85), rgba(10, 30, 25, 0.95)), url('https://z-cdn-media.chatglm.cn/files/64dc6636-451a-4302-9d90-0548c701e156.jpg?auth_key=1884568976-feaa591ab6bd48d5bfbb8e65b6f8240d-0-57e97c4773dc03efaa605af27fd3cfa8') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 5rem 1rem;
+            border-bottom: 6px solid var(--secondary-color);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        header h1 {
+            font-family: 'Amiri', serif;
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+            color: #ffffff;
+            line-height: 1.5;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+            max-width: 800px;
+        }
+
+        header .english-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            font-style: italic;
+            opacity: 0.9;
+            color: var(--secondary-color);
+            margin-bottom: 2rem;
+            max-width: 700px;
+            line-height: 1.6;
+        }
+
+        header .header-name {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            font-family: 'Amiri', serif;
+            margin-top: 1rem;
+            border-top: 1px solid rgba(255,255,255,0.3);
+            border-bottom: 1px solid rgba(255,255,255,0.3);
+            padding: 10px 30px;
+        }
+
+        /* Container */
+        .container {
+            max-width: 900px;
+            margin: -3rem auto 3rem;
+            background: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            overflow: hidden;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Sections */
+        .section {
+            padding: 3rem 2.5rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+            font-family: 'Amiri', serif;
+            font-size: 2rem;
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 0.5rem;
+            width: fit-content;
+        }
+
+        .section-title span {
+            margin-left: 10px;
+            font-size: 1.5rem;
+        }
+
+        .content-block {
+            margin-bottom: 1.5rem;
+        }
+
+        .content-block h3 {
+            color: var(--primary-color);
+            font-size: 1.3rem;
+            margin: 1.5rem 0 0.5rem;
+            font-weight: 700;
+        }
+
+        .content-block p, .content-block li {
+            margin-bottom: 0.8rem;
+            color: #444;
+        }
+
+        .content-block ul {
+            list-style: none;
+            padding-right: 0;
+        }
+
+        .content-block ul li {
+            position: relative;
+            padding-right: 25px;
+            margin-bottom: 1rem;
+        }
+
+        .content-block ul li::before {
+            content: '•';
+            color: var(--secondary-color);
+            font-size: 2rem;
+            position: absolute;
+            right: 0;
+            top: -8px;
+        }
+
+        /* Images Styling */
+        .content-img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            border-radius: 8px;
+            margin: 1rem 1.5rem 1rem 0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .img-left {
+            float: left;
+        }
+
+        .img-right {
+            float: right;
+            margin: 1rem 0 1rem 1.5rem;
+        }
+
+        .clearfix::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* Highlight Box */
+        .highlight-box {
+            background: #f9f9f0;
+            border-right: 4px solid var(--secondary-color);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .highlight-box h3 {
+            margin-top: 0 !important;
+        }
+
+        /* Notice Box */
+        .notice-box {
+            background: #fdf4e3;
+            border: 1px solid #e8d28b;
+            padding: 1rem 1.5rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: bold;
+            color: #8a6d3b;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: var(--primary-color);
+            color: white;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header { min-height: 450px; padding: 3rem 1rem; }
+            header h1 { font-size: 1.8rem; }
+            header .english-title { font-size: 1rem; }
+            .section { padding: 2rem 1.5rem; }
+            .section-title { font-size: 1.5rem; }
+            .content-img { float: none; display: block; margin: 1rem auto; max-width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header with Background Image & Bilingual Title -->
+    <header>
+        <h1>إذا توفرت المواصفات التالية في إنسانة<br>فأجزم بإذن الله أنها ستعيش أسعد مما تمنت هي نفسها</h1>
+        <p class="english-title">"If the following qualities exist in a woman, I assure you she will live happier than she ever wished for herself."</p>
+        <div class="header-name">أحمد س.ع</div>
+    </header>
+
+    <div class="container">
+
+        <!-- Intro -->
+        <div class="section">
+            <div class="section-title"><span>❓</span> لماذا هذه الصفحة؟</div>
+            <div class="content-block">
+                <p style="font-size: 1.1rem; text-align: center; font-weight: 500;">
+                    لأني أبحث بجدية شديدة عن زوجة صالحة لكن ليس لدي قريبات متدينات لمساعدتي في البحث.
+                </p>
+            </div>
+        </div>
+
+        <!-- First: About Me -->
+        <div class="section">
+            <div class="section-title"><span>📌</span> أولاً: نبذة عني</div>
+            <div class="content-block clearfix">
+                <p><strong>الإسم:</strong> أحمد س.ع</p>
+                <p><strong>الجنسية والإقامة:</strong> مصري مقيم بتركيا.</p>
+                <p><strong>الحالة الاجتماعية:</strong> منفصل بعد 19 سنة زواج ولدي أبناء يعيشون مع والدتهم بالتفاهم والاتفاق.</p>
+                <p><strong>العمر:</strong> 49 سنة.</p>
+                <p><strong>العمل والاهتمامات:</strong> لي نشاطان أساسيان في حياتي.. نشاط دنيوي ونشاط أخروي:</p>
+                
+                <div class="highlight-box">
+                    <h3>الدنيوي:</h3>
+                    <img src="https://z-cdn-media.chatglm.cn/files/7b613e4b-104a-4d9d-ab0f-a043c13ad377.jpg?auth_key=1884568976-33bac060d17a43f982bf2166bc01e6ba-0-8796dcce9089bf6120204566d45e34c2" alt="العمل الدنيوي - مستودع" class="content-img img-left">
+                    <p>قضيت حياتي العملية في مجال التسويق وإدارة الأعمال والاستيراد والتصدير. أعمل حالياً في مجال الاستيراد والتصدير والشحن الدولي من وإلى تركيا.</p>
+                    <p>مؤخراً تخصصت أيضاً في مجال البنوك الدولية والـ Fintech ولدي مشروع طموح في هذا المجال تحت التأسيس. أثناء حياتي العملية أتيحت لي فرصة العمل بشركات عالمية وتدربت على يد أكبر مدربين بالعالم في مجال إدارة الأعمال والعلاقات، الأمر الذي أثر في تكويني ووسع آفاقي وأفادني كثيراً في التعامل مع الناس ومع نفسي.</p>
+                </div>
+
+                <div class="highlight-box">
+                    <h3>الأخروي:</h3>
+                    <img src="https://z-cdn-media.chatglm.cn/files/99e2539c-26b6-462d-94e0-9d14d9c8ef40.jpg?auth_key=1884568976-82d9af0313424463a34dcc1cd75cf518-0-9d3fa0d896182ef3751fe82dfb76f048" alt="العمل الأخروي - محاضرة" class="content-img img-right">
+                    <p>مهتم جداً بالدعوة والعلم الشرعي تعليماً وتعلماً وهذا الجانب يشغل نصف يومي. في بداية حياتي أكرمني الله بالتفرغ لطلب العلم الشرعي على كبار علماء السعودية مثل: الشيخ محمد بن عثيمين، وسليمان العلوان، وخالد المصلح، وعبد الرحمن الدهش، وغيرهم.</p>
+                    <p>ومؤخراً أتيحت لي دراسة كتب شرعية متقدمة في الفقه المقارن وأصول الفقه مع الشيخ محمد صالح الفرسي بمدينة قونيا بتركيا تمهيداً لمشروع علمي دعوي قريب بإذن الله. استطعت الدمج بين الدعوة والتربية الإيمانية وإدارة الأعمال وقمت بعمل دورات عديدة في هذه الموضوعات داخل وخارج مصر.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Second: Looking For -->
+        <div class="section">
+            <div class="section-title"><span>🔍</span> ثانياً: أبحث عن</div>
+            <div class="content-block">
+                <p>أبحث عن 3 أشياء (دين - طباع - شكل):</p>
+                
+                <h3>ذات الدين:</h3>
+                <p>لا أستطيع الارتباط إلا بمتدينة ملتزمة.. إنسانة تقبل بالإسلام مرجعاً لحياتنا في السراء والضراء.. صحيح كلنا يعترينا التقصير والزلل لكن في الأساس أرغب بإنسانة متدينة/ملتزمة، فمثلاً لا أستطيع الارتباط بمسلمة تستبيح مشاهدة الأفلام والمسلسلات وسماع الغناء والاختلاط بالرجال أو تتساهل في حجابها إلخ.</p>
+
+                <h3>الطباع:</h3>
+                <p>الطباع التالية شديدة الأهمية:</p>
+                <ul>
+                    <li><strong>هادية عاقلة:</strong> (صعب جداً الحياة مع إنسانة عصبية أو صوتها عالي إلى آخر سمات الخشونة التي تتنافى مع أنوثة المرأة الصالحة).</li>
+                    <li><strong>حنونة ودودة:</strong> (مطلب أساسي.. تحِب وتحَب وتبحث عن بيت فيه مشاعر وليس مجرد زواج وأطفال وحياة جافة).</li>
+                    <li><strong>مبهجة:</strong> (تعرف كيف تلطف الأجواء ليست كئيبة ولا نكدية ولا سريعة الانزواء والهم ولا ذات عقل صغير ترهق زوجها بمصالحتها فضلاً عن أن تكون متشنجة ومتوترة باستمرار إلى آخر الصفات التي تسمم أجواء البيت وتضيع سلامه).</li>
+                    <li><strong>مطيعة:</strong> (الصفة لا تحتاج لشرح وهي ركن في العلاقة.. الحياة مع العنيدة التي تناطحك وتعاملك معاملة الند مستحيلة).</li>
+                    <li><strong>ذكية أنثوياً:</strong> (أستطيع الأنس بالكلام معها.. تفهمني وأفهمها.. وأنثى ذات دلال تعرف كيف تحفر في عقل وقلب زوجها ذكريات وأوقات ترغمه على الاشتياق لها والرغبة في العودة للبيت).</li>
+                </ul>
+                <p>في المقابل غير مهتم بشهادتها ولا جنسيتها ولا مستواها الاجتماعي ولا ماضيها سواء كانت مطلقة أو أرملة (يفضل بكر طبعاً لكن ليس شرطاً).</p>
+
+                <h3>الشكل:</h3>
+                <p>رغم بساطة طلبي في الشكل إلا أنه عملياً نادر للأسف.. الجمال الصارخ ليس شرطاً أبداً… طلبي الحقيقي هو (الخلو من العيوب).. كل ما أطلبه ألا أصطدم بعيوب منفرة مثل:</p>
+                <ul>
+                    <li>مشعرة.</li>
+                    <li>تشققات كثيرة (استرتش ماركس).</li>
+                    <li>حبوب وتجاعيد.</li>
+                    <li>ترهلات واضحة.</li>
+                    <li>شعر أكرت وبشرة غامقة.</li>
+                    <li>بدينة (باعتذر جداً).</li>
+                    <li>أو العكس رفيعة لدرجة تفقدها ملامح أنثوية مفهومة.</li>
+                    <li>قصيرة.</li>
+                </ul>
+                <p>الخ مشاكل الجسم والبشرة.. ببساطة بشرة ناعمة خالية من العيوب وجسم متناسق. لا يلزم أن تكون شقراء ولا ذات عيون ملونة ولا أي شيء أكثر من (إذا نظر إليها سرّه) كيف ستسرني إذا كانت رفيعة جداً أو بدينة أو مشعرة الخ.</p>
+                <p>بالغ اعتذاري للتأكيد على هذه التفاصيل لأني فعلاً حريص على مشاعر بنات المسلمين ولا أحب لها أن ترى مني عزوفاً يجرحها.</p>
+
+                <h3>السن:</h3>
+                <p>صحيح أني في أواخر الأربعينات لكن شكلي وحالتي الصحية أصغر بكثير من سني الحمد لله، وبالتالي يفضل ألا يتجاوز عمرها أوائل الثلاثينات لكن دائماً هناك استثناءات فأحياناً تكون المرأة أربعينية لكن لا زالت محافظة على قوامها ونعومتها وصحتها فتبدو أصغر بكثير.. لكن بوجه عام يفضل ألا تتجاوز أوائل الثلاثينات.</p>
+            </div>
+        </div>
+
+        <!-- Third: My Traits -->
+        <div class="section">
+            <div class="section-title"><span>🤍</span> ثالثاً: صفاتي</div>
+            <div class="content-block clearfix">
+                <img src="https://z-cdn-media.chatglm.cn/files/e00280d5-dbcf-4e89-a3f5-cab5521d308b.jpg?auth_key=1884568976-2be87c226b074e64b84a104f399e7811-0-81b0e0d571a6041ab9904365831fd964" alt="صفاتي" class="content-img img-left">
+                <ul>
+                    <li><strong>متسع الصدر:</strong> رزقني الله قدرة كبيرة تلقائية على تجاوز النكد والحزن والاستياء من المسيئين خاصة المقربين؛ طاقتي في الخصام ضعيفة جداً، أسهل إنسان يمكن أن تصالحه، أستيقظ صباحاً وقد نسيتُ أغلب مشاكل ومعارك الأمس.</li>
+                    <li><strong>متفهم سهل الطباع:</strong> شخص لين الجانب، يمكن الوصول معي لألف حل عند الخلاف.</li>
+                    <li><strong>كريم جداً إذا وثقت:</strong> وأُعطي بلا حدود إذا أحببت وبدون شروط، سوى شرطين: <br>1. الاحترام (عزيز النفس لا أقبل المساس بكرامتي). <br>2. الوفاء (غير مستعد للفراق مرة أخرى وستكون صدمتي كبيرة إذا شعرت أن عطائي موجه لإنسانة لا تصون العشرة والمعروف).</li>
+                    <li><strong>بيتوتي:</strong> إذا أحببتك فستنعمين برجل بيتوتي عائلته هي شلته وأصدقاؤه الحقيقيون هم أفراد أسرته.</li>
+                    <li><strong>مؤمن بالشورى:</strong> صحيح أني قائد بالفطرة وذو شخصية مستقلة لكني أؤمن جداً بعبادة نادرة غائبة اسمها الشورى.. من أكثر الكلمات التي أرددها كلمة "ما رأيكم؟" أستشير وأستخير وأنصت، وأملك من المرونة والشجاعة ما يجعلني أغير رأيي نزولاً على الحق برحابة صدر. لستُ متسلطاً ولا دكتاتوراً لكن لا أسمح بالمساس بهيبة رب البيت.</li>
+                    <li><strong>سند وداعم مبهج:</strong> نادراً ما تسمع مني كلمة محبطة.. مرح في بيتي، حلو اللسان، أعتني بمعنويات من حولي.</li>
+                    <li><strong>مترفع عن الصغائر:</strong> متغافل تماماً عن توافه الأمور.</li>
+                    <li><strong>طموح وشغوف بالعلم:</strong> كما يقال أرفع الرأس.. مثقف أتطور باستمرار لدرجة أنني تعلمت البرمجة وعمري 46، متمكن في مجالي (التسويق وإدارة الأعمال) و(العلوم الشرعية)، متقن للإنجليزية.</li>
+                    <li><strong>راقي عفيف اللسان:</strong> أكره البذاءة ولا أحصي عدد المرات التي وصفني بها الناس (حتى خصومي) بأوصاف مثل: خلوق، محترم.</li>
+                    <li><strong>سعادة في إسعادها:</strong> لدي شهوة حقيقية في إدخال السعادة على زوجتي.. نعم أنا من يسعد بهذا.. ليس فقط هي من تسعد.. بل أنا أنا أنا أشعر بسعادة كبيرة عندما أكون سبباً في ضحكها وبهجتها.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Fourth: Conclusion (تم تعديل الترقيم من خامساً إلى رابعاً) -->
+        <div class="section">
+            <div class="section-title"><span>✨</span> رابعاً: خاتمة ومعلومات متفرقة</div>
+            <div class="content-block">
+                <p>أدخل هذه العلاقة بمشاعر بريئة فياضة ورغبة جارفة في تأسيس بيت مبني على المودة والرحمة. لم تؤثر السنوات السابقة ولا تجربتي السابقة نهائياً في براءة مشاعري تجاه زوجتي الجديدة بل أظن أن الله ادخر لها الكثير لأجل يعلمه وحكمة.</p>
+                <p>بالغ اعتذاري لو بدت طلباتي صريحة بل جارحة للبعض فيما يخص الشكل.. لكن المتأمل بهدوء يدرك أنني لم أطلب أكثر من (إذا نظر إليها سرّه).</p>
+                
+                <div class="notice-box">
+                    إن لم أجد ما أبحث عنه فسأحترم نفسي وأحترم بنات الناس وسأكمل باقي حياتي لرسالتي ودعوتي وجزا الله جميع من ساعدني في البحث خيراً.
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>© 2024 أحمد س.ع - تصميم بكل ود واحترام</p>
+    </footer>
+
+</body>
+</html>
