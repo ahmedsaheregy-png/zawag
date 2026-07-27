@@ -9,232 +9,48 @@
     <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #1a4c44; /* وقار - أخضر داكن مائل للزرقة */
-            --secondary-color: #c9a227; /* بهجة وحضور - ذهبي */
-            --bg-color: #fbf9f4; /* دفء - أبيض مائل للبيج */
+            --primary-color: #1a4c44;
+            --secondary-color: #c9a227;
+            --bg-color: #fbf9f4;
             --text-color: #333333;
             --light-text: #666666;
             --card-bg: #ffffff;
         }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Tajawal', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.8;
-        }
-
-        /* Header Design - Vibrant & Dignified */
-        header {
-            min-height: 550px;
-            background: linear-gradient(rgba(26, 76, 68, 0.85), rgba(10, 30, 25, 0.95)), url('https://z-cdn-media.chatglm.cn/files/64dc6636-451a-4302-9d90-0548c701e156.jpg?auth_key=1884568976-feaa591ab6bd48d5bfbb8e65b6f8240d-0-57e97c4773dc03efaa605af27fd3cfa8') no-repeat center center/cover;
-            color: white;
-            text-align: center;
-            padding: 5rem 1rem;
-            border-bottom: 6px solid var(--secondary-color);
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        header h1 {
-            font-family: 'Amiri', serif;
-            font-size: 2.8rem;
-            margin-bottom: 1.5rem;
-            color: #ffffff;
-            line-height: 1.5;
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
-            max-width: 800px;
-        }
-
-        header .english-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.2rem;
-            font-style: italic;
-            opacity: 0.9;
-            color: var(--secondary-color);
-            margin-bottom: 2rem;
-            max-width: 700px;
-            line-height: 1.6;
-        }
-
-        header .header-name {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--secondary-color);
-            font-family: 'Amiri', serif;
-            margin-top: 1rem;
-            border-top: 1px solid rgba(255,255,255,0.3);
-            border-bottom: 1px solid rgba(255,255,255,0.3);
-            padding: 10px 30px;
-        }
-
-        /* Container */
-        .container {
-            max-width: 900px;
-            margin: -3rem auto 3rem;
-            background: var(--card-bg);
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-            overflow: hidden;
-            position: relative;
-            z-index: 2;
-        }
-
-        /* Sections */
-        .section {
-            padding: 3rem 2.5rem;
-            border-bottom: 1px solid #eee;
-        }
-
-        .section:last-child {
-            border-bottom: none;
-        }
-
-        .section-title {
-            display: flex;
-            align-items: center;
-            margin-bottom: 1.5rem;
-            color: var(--primary-color);
-            font-family: 'Amiri', serif;
-            font-size: 2rem;
-            border-bottom: 2px solid var(--secondary-color);
-            padding-bottom: 0.5rem;
-            width: fit-content;
-        }
-
-        .section-title span {
-            margin-left: 10px;
-            font-size: 1.5rem;
-        }
-
-        .content-block {
-            margin-bottom: 1.5rem;
-        }
-
-        .content-block h3 {
-            color: var(--primary-color);
-            font-size: 1.3rem;
-            margin: 1.5rem 0 0.5rem;
-            font-weight: 700;
-        }
-
-        .content-block p, .content-block li {
-            margin-bottom: 0.8rem;
-            color: #444;
-        }
-
-        .content-block ul {
-            list-style: none;
-            padding-right: 0;
-        }
-
-        .content-block ul li {
-            position: relative;
-            padding-right: 25px;
-            margin-bottom: 1rem;
-        }
-
-        .content-block ul li::before {
-            content: '•';
-            color: var(--secondary-color);
-            font-size: 2rem;
-            position: absolute;
-            right: 0;
-            top: -8px;
-        }
-
-        /* Images Styling */
-        .content-img {
-            width: 100%;
-            max-width: 300px;
-            height: auto;
-            border-radius: 8px;
-            margin: 1rem 1.5rem 1rem 0;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-
-        .img-left {
-            float: left;
-        }
-
-        .img-right {
-            float: right;
-            margin: 1rem 0 1rem 1.5rem;
-        }
-
-        .clearfix::after {
-            content: "";
-            display: table;
-            clear: both;
-        }
-
-        /* Highlight Box */
-        .highlight-box {
-            background: #f9f9f0;
-            border-right: 4px solid var(--secondary-color);
-            padding: 1.5rem;
-            margin: 1.5rem 0;
-            border-radius: 4px;
-            overflow: hidden;
-        }
-
-        .highlight-box h3 {
-            margin-top: 0 !important;
-        }
-
-        /* Notice Box */
-        .notice-box {
-            background: #fdf4e3;
-            border: 1px solid #e8d28b;
-            padding: 1rem 1.5rem;
-            margin: 2rem 0;
-            border-radius: 8px;
-            text-align: center;
-            font-weight: bold;
-            color: #8a6d3b;
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 2rem;
-            background: var(--primary-color);
-            color: white;
-            font-size: 0.9rem;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            header { min-height: 450px; padding: 3rem 1rem; }
-            header h1 { font-size: 1.8rem; }
-            header .english-title { font-size: 1rem; }
-            .section { padding: 2rem 1.5rem; }
-            .section-title { font-size: 1.5rem; }
-            .content-img { float: none; display: block; margin: 1rem auto; max-width: 100%; }
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Tajawal', sans-serif; background-color: var(--bg-color); color: var(--text-color); line-height: 1.8; }
+        header { min-height: 550px; background: linear-gradient(rgba(26, 76, 68, 0.85), rgba(10, 30, 25, 0.95)), url('https://z-cdn-media.chatglm.cn/files/64dc6636-451a-4302-9d90-0548c701e156.jpg?auth_key=1884568976-feaa591ab6bd48d5bfbb8e65b6f8240d-0-57e97c4773dc03efaa605af27fd3cfa8') no-repeat center center/cover; color: white; text-align: center; padding: 5rem 1rem; border-bottom: 6px solid var(--secondary-color); position: relative; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+        header h1 { font-family: 'Amiri', serif; font-size: 2.8rem; margin-bottom: 1.5rem; color: #ffffff; line-height: 1.5; text-shadow: 2px 2px 8px rgba(0,0,0,0.6); max-width: 800px; }
+        header .english-title { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-style: italic; opacity: 0.9; color: var(--secondary-color); margin-bottom: 2rem; max-width: 700px; line-height: 1.6; }
+        header .header-name { font-size: 1.8rem; font-weight: 700; color: var(--secondary-color); font-family: 'Amiri', serif; margin-top: 1rem; border-top: 1px solid rgba(255,255,255,0.3); border-bottom: 1px solid rgba(255,255,255,0.3); padding: 10px 30px; }
+        .container { max-width: 900px; margin: -3rem auto 3rem; background: var(--card-bg); border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); overflow: hidden; position: relative; z-index: 2; }
+        .section { padding: 3rem 2.5rem; border-bottom: 1px solid #eee; }
+        .section:last-child { border-bottom: none; }
+        .section-title { display: flex; align-items: center; margin-bottom: 1.5rem; color: var(--primary-color); font-family: 'Amiri', serif; font-size: 2rem; border-bottom: 2px solid var(--secondary-color); padding-bottom: 0.5rem; width: fit-content; }
+        .section-title span { margin-left: 10px; font-size: 1.5rem; }
+        .content-block { margin-bottom: 1.5rem; }
+        .content-block h3 { color: var(--primary-color); font-size: 1.3rem; margin: 1.5rem 0 0.5rem; font-weight: 700; }
+        .content-block p, .content-block li { margin-bottom: 0.8rem; color: #444; }
+        .content-block ul { list-style: none; padding-right: 0; }
+        .content-block ul li { position: relative; padding-right: 25px; margin-bottom: 1rem; }
+        .content-block ul li::before { content: '•'; color: var(--secondary-color); font-size: 2rem; position: absolute; right: 0; top: -8px; }
+        .content-img { width: 100%; max-width: 300px; height: auto; border-radius: 8px; margin: 1rem 1.5rem 1rem 0; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .img-left { float: left; }
+        .img-right { float: right; margin: 1rem 0 1rem 1.5rem; }
+        .clearfix::after { content: ""; display: table; clear: both; }
+        .highlight-box { background: #f9f9f0; border-right: 4px solid var(--secondary-color); padding: 1.5rem; margin: 1.5rem 0; border-radius: 4px; overflow: hidden; }
+        .highlight-box h3 { margin-top: 0 !important; }
+        .notice-box { background: #fdf4e3; border: 1px solid #e8d28b; padding: 1rem 1.5rem; margin: 2rem 0; border-radius: 8px; text-align: center; font-weight: bold; color: #8a6d3b; }
+        footer { text-align: center; padding: 2rem; background: var(--primary-color); color: white; font-size: 0.9rem; }
+        @media (max-width: 768px) { header { min-height: 450px; padding: 3rem 1rem; } header h1 { font-size: 1.8rem; } header .english-title { font-size: 1rem; } .section { padding: 2rem 1.5rem; } .section-title { font-size: 1.5rem; } .content-img { float: none; display: block; margin: 1rem auto; max-width: 100%; } }
     </style>
 </head>
 <body>
-
-    <!-- Header with Background Image & Bilingual Title -->
     <header>
         <h1>إذا توفرت المواصفات التالية في إنسانة<br>فأجزم بإذن الله أنها ستعيش أسعد مما تمنت هي نفسها</h1>
         <p class="english-title">"If the following qualities exist in a woman, I assure you she will live happier than she ever wished for herself."</p>
         <div class="header-name">أحمد ساهر</div>
     </header>
-
     <div class="container">
-
-        <!-- Intro -->
         <div class="section">
             <div class="section-title"><span>❓</span> لماذا هذه الصفحة؟</div>
             <div class="content-block">
@@ -243,42 +59,32 @@
                 </p>
             </div>
         </div>
-
-        <!-- First: About Me -->
         <div class="section">
             <div class="section-title"><span>📌</span> أولاً: نبذة عني</div>
             <div class="content-block clearfix">
                 <p><strong>الإسم:</strong> أحمد ساهر</p>
                 <p><strong>الجنسية والإقامة:</strong> مصري مقيم بتركيا.</p>
-                <p><strong>الحالة الاجتماعية:</strong> منفصل بعد 20 سنة زواج ولدي أبناء يعيشون مع والدتهم بالتفاهم والاتفاق.</p>
-                <p><strong>العمر:</strong> 49 سنة.</p>
                 <p><strong>العمل والاهتمامات:</strong> لي نشاطان أساسيان في حياتي.. نشاط دنيوي ونشاط أخروي:</p>
-                
                 <div class="highlight-box">
                     <h3>الدنيوي:</h3>
-                    <img src="https://z-cdn-media.chatglm.cn/files/7b613e4b-104a-4d9d-ab0f-a043c13ad377.jpg?auth_key=1884568976-33bac060d17a43f982bf2166bc01e6ba-0-8796dcce9089bf6120204566d45e34c2" alt="العمل الدنيوي - مستودع" class="content-img img-left">
+                    <img src="img1.png" alt="العمل الدنيوي - مستودع" class="content-img img-left">
                     <p>قضيت حياتي العملية في مجال التسويق وإدارة الأعمال والاستيراد والتصدير. أعمل حالياً في مجال الاستيراد والتصدير والشحن الدولي من وإلى تركيا.</p>
                     <p>مؤخراً تخصصت أيضاً في مجال البنوك الدولية والـ Fintech ولدي مشروع طموح في هذا المجال تحت التأسيس. أثناء حياتي العملية أتيحت لي فرصة العمل بشركات عالمية وتدربت على يد أكبر مدربين بالعالم في مجال إدارة الأعمال والعلاقات، الأمر الذي أثر في تكويني ووسع آفاقي وأفادني كثيراً في التعامل مع الناس ومع نفسي.</p>
                 </div>
-
                 <div class="highlight-box">
                     <h3>الأخروي:</h3>
-                    <img src="https://z-cdn-media.chatglm.cn/files/99e2539c-26b6-462d-94e0-9d14d9c8ef40.jpg?auth_key=1884568976-82d9af0313424463a34dcc1cd75cf518-0-9d3fa0d896182ef3751fe82dfb76f048" alt="العمل الأخروي - محاضرة" class="content-img img-right">
+                    <img src="img2.jpg" alt="العمل الأخروي - محاضرة" class="content-img img-right">
                     <p>مهتم جداً بالدعوة والعلم الشرعي تعليماً وتعلماً وهذا الجانب يشغل نصف يومي. في بداية حياتي أكرمني الله بالتفرغ لطلب العلم الشرعي على كبار علماء السعودية مثل: الشيخ محمد بن عثيمين، وسليمان العلوان، وخالد المصلح، وعبد الرحمن الدهش، وغيرهم.</p>
                     <p>ومؤخراً أتيحت لي دراسة كتب شرعية متقدمة في الفقه المقارن وأصول الفقه مع الشيخ محمد صالح الفرسي بمدينة قونيا بتركيا تمهيداً لمشروع علمي دعوي قريب بإذن الله. استطعت الدمج بين الدعوة والتربية الإيمانية وإدارة الأعمال وقمت بعمل دورات عديدة في هذه الموضوعات داخل وخارج مصر.</p>
                 </div>
             </div>
         </div>
-
-        <!-- Second: Looking For -->
         <div class="section">
             <div class="section-title"><span>🔍</span> ثانياً: أبحث عن</div>
             <div class="content-block">
                 <p>أبحث عن 3 أشياء (دين - طباع - شكل):</p>
-                
                 <h3>ذات الدين:</h3>
                 <p>لا أستطيع الارتباط إلا بمتدينة ملتزمة.. إنسانة تقبل بالإسلام مرجعاً لحياتنا في السراء والضراء.. صحيح كلنا يعترينا التقصير والزلل لكن في الأساس أرغب بإنسانة متدينة/ملتزمة، فمثلاً لا أستطيع الارتباط بمسلمة تستبيح مشاهدة الأفلام والمسلسلات وسماع الغناء والاختلاط بالرجال أو تتساهل في حجابها إلخ.</p>
-
                 <h3>الطباع:</h3>
                 <p>الطباع التالية شديدة الأهمية:</p>
                 <ul>
@@ -289,7 +95,6 @@
                     <li><strong>ذكية أنثوياً:</strong> (أستطيع الأنس بالكلام معها.. تفهمني وأفهمها.. وأنثى ذات دلال تعرف كيف تحفر في عقل وقلب زوجها ذكريات وأوقات ترغمه على الاشتياق لها والرغبة في العودة للبيت).</li>
                 </ul>
                 <p>في المقابل غير مهتم بشهادتها ولا جنسيتها ولا مستواها الاجتماعي ولا ماضيها سواء كانت مطلقة أو أرملة (يفضل بكر طبعاً لكن ليس شرطاً).</p>
-
                 <h3>الشكل:</h3>
                 <p>رغم بساطة طلبي في الشكل إلا أنه عملياً نادر للأسف.. الجمال الصارخ ليس شرطاً أبداً… طلبي الحقيقي هو (الخلو من العيوب).. كل ما أطلبه ألا أصطدم بعيوب منفرة مثل:</p>
                 <ul>
@@ -304,13 +109,10 @@
                 </ul>
                 <p>الخ مشاكل الجسم والبشرة.. ببساطة بشرة ناعمة خالية من العيوب وجسم متناسق. لا يلزم أن تكون شقراء ولا ذات عيون ملونة ولا أي شيء أكثر من (إذا نظر إليها سرّته) كيف ستسرني إذا كانت رفيعة جداً أو بدينة أو مشعرة الخ.</p>
                 <p>بالغ اعتذاري للتأكيد على هذه التفاصيل لأني فعلاً حريص على مشاعر بنات المسلمين ولا أحب لها أن ترى مني عزوفاً يجرحها.</p>
-
                 <h3>السن:</h3>
                 <p>صحيح أني في أواخر الأربعينات لكن شكلي وحالتي الصحية أصغر بكثير من سني الحمد لله، وبالتالي يفضل ألا يتجاوز عمرها أوائل الثلاثينات لكن دائماً هناك استثناءات فأحياناً تكون المرأة أربعينية لكن لا زالت محافظة على قوامها ونعومتها وصحتها فتبدو أصغر بكثير.. لكن بوجه عام يفضل ألا تتجاوز أوائل الثلاثينات.</p>
             </div>
         </div>
-
-        <!-- Third: My Traits -->
         <div class="section">
             <div class="section-title"><span>🤍</span> ثالثاً: صفاتي</div>
             <div class="content-block clearfix">
@@ -329,25 +131,20 @@
                 </ul>
             </div>
         </div>
-
-        <!-- Fourth: Conclusion (تم تعديل الترقيم من خامساً إلى رابعاً) -->
         <div class="section">
             <div class="section-title"><span>✨</span> رابعاً: خاتمة ومعلومات متفرقة</div>
             <div class="content-block">
                 <p>أدخل هذه العلاقة بمشاعر بريئة فياضة ورغبة جارفة في تأسيس بيت مبني على المودة والرحمة. لم تؤثر السنوات السابقة ولا تجربتي السابقة نهائياً في براءة مشاعري تجاه زوجتي الجديدة بل أظن أن الله ادخر لها الكثير لأجل يعلمه وحكمة.</p>
+                <p><strong>ملحوظة:</strong> أولادي مع والدتهم بالاتفاق ولن يتغير هذا الوضع أبداً.</p>
                 <p>بالغ اعتذاري لو بدت طلباتي صريحة بل جارحة للبعض فيما يخص الشكل.. لكن المتأمل بهدوء يدرك أنني لم أطلب أكثر من (إذا نظر إليها سرّه).</p>
-                
                 <div class="notice-box">
                     إن لم أجد ما أبحث عنه فسأحترم نفسي وأحترم بنات الناس وسأكمل باقي حياتي لرسالتي ودعوتي وجزا الله جميع من ساعدني في البحث خيراً.
                 </div>
             </div>
         </div>
-
     </div>
-
     <footer>
         <p>©  ربنا هب لنا من أزواجنا وذرياتنا قرة أعين 00905376744337</p>
     </footer>
-
 </body>
 </html>
