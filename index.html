@@ -9,82 +9,275 @@
     <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #1a4c44;
-            --secondary-color: #c9a227;
-            --bg-color: #fbf9f4;
+            --primary-color: #1a4c44; /* وقار - أخضر داكن مائل للزرقة */
+            --secondary-color: #c9a227; /* بهجة وحضور - ذهبي */
+            --bg-color: #fbf9f4; /* دفء - أبيض مائل للبيج */
             --text-color: #333333;
             --light-text: #666666;
             --card-bg: #ffffff;
         }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Tajawal', sans-serif; background-color: var(--bg-color); color: var(--text-color); line-height: 1.8; }
-        header { min-height: 550px; background: linear-gradient(rgba(26, 76, 68, 0.85), rgba(10, 30, 25, 0.95)), url('https://z-cdn-media.chatglm.cn/files/64dc6636-451a-4302-9d90-0548c701e156.jpg?auth_key=1884568976-feaa591ab6bd48d5bfbb8e65b6f8240d-0-57e97c4773dc03efaa605af27fd3cfa8') no-repeat center center/cover; color: white; text-align: center; padding: 5rem 1rem; border-bottom: 6px solid var(--secondary-color); position: relative; display: flex; flex-direction: column; justify-content: center; align-items: center; }
-        header h1 { font-family: 'Amiri', serif; font-size: 2.8rem; margin-bottom: 1.5rem; color: #ffffff; line-height: 1.5; text-shadow: 2px 2px 8px rgba(0,0,0,0.6); max-width: 800px; }
-        header .english-title { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-style: italic; opacity: 0.9; color: var(--secondary-color); margin-bottom: 2rem; max-width: 700px; line-height: 1.6; }
-        header .header-name { font-size: 1.8rem; font-weight: 700; color: var(--secondary-color); font-family: 'Amiri', serif; margin-top: 1rem; border-top: 1px solid rgba(255,255,255,0.3); border-bottom: 1px solid rgba(255,255,255,0.3); padding: 10px 30px; }
-        .container { max-width: 900px; margin: -3rem auto 3rem; background: var(--card-bg); border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); overflow: hidden; position: relative; z-index: 2; }
-        .section { padding: 3rem 2.5rem; border-bottom: 1px solid #eee; }
-        .section:last-child { border-bottom: none; }
-        .section-title { display: flex; align-items: center; margin-bottom: 1.5rem; color: var(--primary-color); font-family: 'Amiri', serif; font-size: 2rem; border-bottom: 2px solid var(--secondary-color); padding-bottom: 0.5rem; width: fit-content; }
-        .section-title span { margin-left: 10px; font-size: 1.5rem; }
-        .content-block { margin-bottom: 1.5rem; }
-        .content-block h3 { color: var(--primary-color); font-size: 1.3rem; margin: 1.5rem 0 0.5rem; font-weight: 700; }
-        .content-block p, .content-block li { margin-bottom: 0.8rem; color: #444; }
-        .content-block ul { list-style: none; padding-right: 0; }
-        .content-block ul li { position: relative; padding-right: 25px; margin-bottom: 1rem; }
-        .content-block ul li::before { content: '•'; color: var(--secondary-color); font-size: 2rem; position: absolute; right: 0; top: -8px; }
-        .content-img { width: 100%; max-width: 300px; height: auto; border-radius: 8px; margin: 1rem 1.5rem 1rem 0; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-        .img-left { float: left; }
-        .img-right { float: right; margin: 1rem 0 1rem 1.5rem; }
-        .clearfix::after { content: ""; display: table; clear: both; }
-        .highlight-box { background: #f9f9f0; border-right: 4px solid var(--secondary-color); padding: 1.5rem; margin: 1.5rem 0; border-radius: 4px; overflow: hidden; }
-        .highlight-box h3 { margin-top: 0 !important; }
-        .notice-box { background: #fdf4e3; border: 1px solid #e8d28b; padding: 1rem 1.5rem; margin: 2rem 0; border-radius: 8px; text-align: center; font-weight: bold; color: #8a6d3b; }
-        footer { text-align: center; padding: 2rem; background: var(--primary-color); color: white; font-size: 0.9rem; }
-        @media (max-width: 768px) { header { min-height: 450px; padding: 3rem 1rem; } header h1 { font-size: 1.8rem; } header .english-title { font-size: 1rem; } .section { padding: 2rem 1.5rem; } .section-title { font-size: 1.5rem; } .content-img { float: none; display: block; margin: 1rem auto; max-width: 100%; } }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.8;
+        }
+
+        /* Header Design - Vibrant & Dignified */
+        header {
+            min-height: 550px;
+            background: linear-gradient(rgba(26, 76, 68, 0.85), rgba(10, 30, 25, 0.95)), url('https://z-cdn-media.chatglm.cn/files/64dc6636-451a-4302-9d90-0548c701e156.jpg?auth_key=1884568976-feaa591ab6bd48d5bfbb8e65b6f8240d-0-57e97c4773dc03efaa605af27fd3cfa8') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 5rem 1rem;
+            border-bottom: 6px solid var(--secondary-color);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        header h1 {
+            font-family: 'Amiri', serif;
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+            color: #ffffff;
+            line-height: 1.5;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+            max-width: 800px;
+        }
+
+        header .english-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            font-style: italic;
+            opacity: 0.9;
+            color: var(--secondary-color);
+            margin-bottom: 2rem;
+            max-width: 700px;
+            line-height: 1.6;
+        }
+
+        header .header-name {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            font-family: 'Amiri', serif;
+            margin-top: 1rem;
+            border-top: 1px solid rgba(255,255,255,0.3);
+            border-bottom: 1px solid rgba(255,255,255,0.3);
+            padding: 10px 30px;
+        }
+
+        /* Container */
+        .container {
+            max-width: 900px;
+            margin: -3rem auto 3rem;
+            background: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            overflow: hidden;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Sections */
+        .section {
+            padding: 3rem 2.5rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+            font-family: 'Amiri', serif;
+            font-size: 2rem;
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 0.5rem;
+            width: fit-content;
+        }
+
+        .section-title span {
+            margin-left: 10px;
+            font-size: 1.5rem;
+        }
+
+        .content-block {
+            margin-bottom: 1.5rem;
+        }
+
+        .content-block h3 {
+            color: var(--primary-color);
+            font-size: 1.3rem;
+            margin: 1.5rem 0 0.5rem;
+            font-weight: 700;
+        }
+
+        .content-block p, .content-block li {
+            margin-bottom: 0.8rem;
+            color: #444;
+        }
+
+        .content-block ul {
+            list-style: none;
+            padding-right: 0;
+        }
+
+        .content-block ul li {
+            position: relative;
+            padding-right: 25px;
+            margin-bottom: 1rem;
+        }
+
+        .content-block ul li::before {
+            content: '•';
+            color: var(--secondary-color);
+            font-size: 2rem;
+            position: absolute;
+            right: 0;
+            top: -8px;
+        }
+
+        /* Images Styling */
+        .content-img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            border-radius: 8px;
+            margin: 1rem 1.5rem 1rem 0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .img-left {
+            float: left;
+        }
+
+        .img-right {
+            float: right;
+            margin: 1rem 0 1rem 1.5rem;
+        }
+
+        .clearfix::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* Highlight Box */
+        .highlight-box {
+            background: #f9f9f0;
+            border-right: 4px solid var(--secondary-color);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .highlight-box h3 {
+            margin-top: 0 !important;
+        }
+
+        /* Notice Box */
+        .notice-box {
+            background: #fdf4e3;
+            border: 1px solid #e8d28b;
+            padding: 1rem 1.5rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: bold;
+            color: #8a6d3b;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: var(--primary-color);
+            color: white;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header { min-height: 450px; padding: 3rem 1rem; }
+            header h1 { font-size: 1.8rem; }
+            header .english-title { font-size: 1rem; }
+            .section { padding: 2rem 1.5rem; }
+            .section-title { font-size: 1.5rem; }
+            .content-img { float: none; display: block; margin: 1rem auto; max-width: 100%; }
+        }
     </style>
 </head>
 <body>
+
+    <!-- Header with Background Image & Bilingual Title -->
     <header>
         <h1>إذا توفرت المواصفات التالية في إنسانة<br>فأجزم بإذن الله أنها ستعيش أسعد مما تمنت هي نفسها</h1>
         <p class="english-title">"If the following qualities exist in a woman, I assure you she will live happier than she ever wished for herself."</p>
         <div class="header-name">أحمد ساهر</div>
     </header>
+
     <div class="container">
+
+        <!-- Intro -->
         <div class="section">
             <div class="section-title"><span>❓</span> لماذا هذه الصفحة؟</div>
             <div class="content-block">
                 <p style="font-size: 1.1rem; text-align: center; font-weight: 500;">
-                    لأني أبحث بجدية عن زوجة صالحة لكن ليس لدي قريبات متدينات لمساعدتي في البحث.
+                    <img src="data:image/jpeg;base64,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" alt="" class="content-img" style="display:block;margin:1rem auto;max-width:300px;">
+                لأني أبحث بجدية عن زوجة صالحة لكن ليس لدي قريبات متدينات لمساعدتي في البحث.
                 </p>
             </div>
         </div>
+
+        <!-- First: About Me -->
         <div class="section">
             <div class="section-title"><span>📌</span> أولاً: نبذة عني</div>
             <div class="content-block clearfix">
                 <p><strong>الإسم:</strong> أحمد ساهر</p>
                 <p><strong>الجنسية والإقامة:</strong> مصري مقيم بتركيا.</p>
                 <p><strong>العمل والاهتمامات:</strong> لي نشاطان أساسيان في حياتي.. نشاط دنيوي ونشاط أخروي:</p>
+                
                 <div class="highlight-box">
                     <h3>الدنيوي:</h3>
-                    <img src="img1.png" alt="العمل الدنيوي - مستودع" class="content-img img-left">
+                    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCACoASwDASIAAhEBAxEB/8QAGgABAAMBAQEAAAAAAAAAAAAAAAEDBAIFBv/EADwQAAEEAQMCAwcBBAkFAQAAAAEAAgMREgQhUTFhE0GBBRQiUnGR8KEjMkLRFiQzU2JzscHhBhVygqKS/8QAFwEBAQEBAAAAAAAAAAAAAAAAAAECA//EABwRAQEBAQADAQEAAAAAAAAAAAABERICEyFRMf/aAAwDAQACEQMRAD8A+qAAYw+E6QuNEjyWfWPMDXGNuRyDQD0FmrPZbWxFooPcFz4DSbLnLMn8+MWbHnx6jKESOY7qR8IvoevqrWSCS6DhXIpa/d28lPd28lSzb8hzWWFxlFuY5m5FO6rkvIlazAkEXl5BbPd28lQYGNFlxU5plZHzMZsbv6I6Qjw6jcczRr+H6rSWMHXMKMY+XpzTKpld4cJkomgTQVUc5dCJHxkG6ob+q11Hy9Kj5enNMrPFL4l/A5tfMKXUTjISCxzKdW/n3V1R8vTGPl6c0yskk7mahkQjLgas9uy7fK1hp2VVd1YWio+XpjFy5OaZWYy0xrmsc7I1Q8hz9FY84RF9EkXsPNW1Hy9MYuXJzTKy6eYzRlzmY77dxypbM17gGgm+uxFLTUfL0qPl6c0yqI3F73NLHNDXVZ/i7heZ7U9rSaHWNhZFG8Fod8RNmzW1L2sYuXJjHy9OaZWZ8wY4twea4Cl8hbHmI3PO3wjqtFR8vTGPlyc0yqnnGJz6stBNc7LJodY7VNeXta3ANPwkkbi69F6GMfL0qPl6c0xmbOxz8W2TdXWy6a8uke0scA2qcejvor8Y+XpjFy5OaZWfVTO04bhE1wDDI4uvevIV57rS98bH4+C8mr2basEzAKAKeM3greRrHLwxsJkbC55H8IG5XEzQ3EgVY6K4Sgiw11fRcPfHIBeWylnwsZInmQEljmU4inefddq9sUbxs4qfBjyxz+Ii6sWs81nKzpZuqNcrT7u3kp7u3kpzTKyvcWsLgLIHRRE4vYHObid9vVa/d28lVtEDpXRNmaZG9Whwseic0yqHOLS0BpN+fC6Wn3dvJUHT77O+6c0yup4fGa0ZvZi4O+E1asralj10mqY9o0zSW1vTQd7WzfLtS6NoY3BtWTv5qqPTBmodLdkgjpvub35URvl8UBwNEm7bVD6/ZSx+pyAfEyr3Icg51GmdNNHI2XEM8sb8/wBFe8EgEb0bpUh+qreKM/8AsrI3SYEyNAN7AG0GdsLmRljciD026bKluklFEyyZc+Sv08mpfAXSRhsmWwIqhwrYnTknxWMA8qKE+so0soaB4km3nSe7SVRfIfqtBk1DWk+E01w5MtTiPgYD57oKPd5PnkQaaTb437dNlrjMhvxGBvFG1k0k2tdPP7xEGxD90Vvd+R8wRugHTy+T3+qkwSk/vPGyvznJH7MAXvZ6D+anxZf7g/8A6CDMNPLQt7786ClsEocDm9w8wQtcZeW/tAAb6DhdoMuDvlKYO+UrUiDLg75SmDvlK1Igy4O+Upg75StSIMuDvlKYO+UrUiDLg75SmDvlK1Igy4O+UqsaZzZnSDK3CiD0W5EGN0Ty4EbVV/DvtwbXM2nfLVFzaN7LciCqFhaSSKVT9JlOZMmi3Nd+7vt5X6LUiCK3tZhoyNcdT4ruhGPbi+PP1Wk3WypndK1/wXVbU27KC6t7Xk6T2FFptYzUAjNr3Pz3ydlfX7/oF6JdqMhixmNb2d7pc56qh+yZfn8SC17MnMddYm/rsR/uu1nz1N/2TK/8+q0IOLPKX3UFVQ+L8Xi32ukFxNbkpd+a8b2pG3V+19PpNWHnRvicQ1pIDn3W9cD/AFXPscxw+1NZpNEXHRxNaKJJDJLNgEoPbs8pZ5VDpZxI4Ngto2BLqvuuTNqfLTefzXaDTZ5Szys3jamyfdtroDLf6qHamZrgDp+p2p12g1WeUs8qh00wc4CCw3zyXbHufHG7Gi7qD5BBZZ5Szys0k+obI4M0pe0HY5VfRQzUzGdscmmLA6/iyvy/Ag1WeUs8rlpfk7MNAv4aN2O/C6QLPKWeURAs8pZ5RECzylnlEQLPKWeUQ9EC+6X3VQMonog4G+K7d0nMgiJiFv26ceaotvul91TpjKY/2wOVmidrCsbkQMwA7zANhQdWeUvuo4XDDLg7MNys4gHbsgsvul91yLoZAA1vSpaZfGo5VZsV8Nb/APH6qjRfdL7quUvEZ8O8rHQX57pEXmP9peQJFkVfdQWX3S+6zvM3vLQ1r8NtwdgPO1bIXNjcWC3AGh3Qd33XEk0cRAklawu6ZOAtVwOkcXeI1wFii7r3XyjvZkntDWaybW6gxymVzMHNumA+X+yo+ys8qGPLsrFUa2cCvM/6cbNH7NEcz3PEcjmxvd1czyK50vWf/NcoPWSlBFggGu4WT3SfANGqcBQ6N/5QanMY/HNrXYnJti6PIRkbI8sGtbkcjQqzyoia9kTWyPMjh1cRVqt0UpeXMnLQTeNWgvRVRRyscTJMZBwRS6lj8Vobk5tG7b1QdoqBDKMiZzk6twOi58DUbj3k9BRx3QaUVMcUrZMnTlw8wQrJWF8bmhxaTtY6hB0izNh1BcS7UEDyAHVWwxvjBD5DJwT5ILEVUsb3uaWSllXtXVcCCUHbUOA+iDQi5ja5rAHuzcOp5Vb4Hl7ntlc0u8vJBcizNgnx+LUHfyA6LQwEMaHOyIG55QSizP0z3Pc4TuaD0FdPzdXsaWtAJs8oOkVEkMjpC5kxYD5Vah0MpH9udulCkGikVBimOP8AWC2m0ab1PKjwZgGBs/S7sdeqDRSLKdPOLcNQS7y2oLUgJSzugls4zuAJJqrXLYJ6BdqHB3UjqEGqkpFlGmlqveHUOgA/LQakpZvBnD21OcR1sLSgUlIiBSrfBFI7J8bXHkhWIqDQBQAoDyC8nS9Z/wDNcvWHVeTpes/+a5Qes5ja+LYDfrS5YyKRuTHZN5DyQsPt7Ry67RNhjLsPEaZWsNFzPMD9Fn9j+zn6CbUui8UQvYPheRZeL3A8tqCYuvYEbW9L+5XWI/CvNa72oQ0YNvEWXV1vsfKz9u6iWf2jG3ORjWMxGRFEg35boj08R+FRiPwqpnjSaWMk4SlrS7bofPZc46rK8o64ooNGI/CmI/CgUoIxH4UxH4VKIIxH4UxH4VKIIxH4UxH4VKIIxH4UxH4VKIIxH4UxH4VKIOaalNVM7HvYGsIG+93RHC5kilLGCKYtxG5IvL6oNADSlNXMYcGtDzk4Dc1VqmWOR0jXMkxA8uP5oNFNSmrI+PV5uLNQwNJ2Bb0C7ayfw3h8rS4/ukDog0U1KbV/7qljZBAGmT9pW7qtWndpQT8P4VHw8/qqfCPjZ71XTv0/0UOjlN4yUDf8PRVF/wAPP6p8P4VS9jy5pBoDr3VjbB3Qd01KauGBw2Li7e+lUomY58bmtNElRVlNSmqgRyDT4Nkp/wA3Wt0hZO3LxpQ8UKptfdBf8KfCqYGPYwiR+Zs7rshxxp1AHcVdoOwB5f6ryNL1n/zXL129F5Gl6z/5rkHsqPRCaXPiC62vi0HXonooy7Jl2QT6J6IHb9EJA6kD6oHonogNiwgc0uLQRY6i0D0T0Uogj0T0Uogj0T0Uogj0T0Uogj0T0QmlGXZBPonooy7Jl2QT6J6KMuy4nnbBBJLJeLG5GkFnonovF/pJp/7iX9P5p/SXT/3Ev6fzWeo5+zw/Xteiei8X+kun/uJf0/mpb/1Jpi4AwygE9dtv1V6h7PH9ez6J6KVjn9oMgmdGWOONb+W/Uem33VdGv0T0WJ3tSENJDJCfIUBa3II9E9FKII9E9FKII9E9FKyv1RbqhFhtYF3yg1LhsbG3ixos2aHUrtQghypZA1sz5Tu5xsbdNh/JXk0oyPZBkdpJHXWqmAJsjr6K5kRbCY3SSOv+Imj91bkeyZHsggDcdVzPCJgwONBrrPfYj/dd5HsmR7IJaA1oa0UAKAVRg/bZh1C7Ire/rwrMj2TI9kHSLnI9kyPZB0i5yPZMj2QdIucj2TI9kHSLnI9kyPZAd5LKzSuZIXCeTEkktrra1ZHsmR7IMZ0RdF4b55HUQQT5bUrtPE6FmBkfJvsXeQ4V2R7JkeyCuWPxG45ObvdtVPtCJ8vs/URxtLnOYQBytWR7JkeyJZsx8czSa5jQBo5TV9WHzFb8ruPTatjGtd7PkeG31aa+v1X12RTIrHDj6Z+vkJ9Lq5g2vZ74yPNrDuuDoNbI9v8AVJG9Bsygvssj2TIpwemfqR0SxalZ5NOyR5dmQ7zr8+v3W3doRZn6Vr5MvEdf1Q6UY0JHXyeEGlFl91YDXiOG/S+q7MAe1rfEd8G3wmkF1hSszdG1vSR6lmlDGva17qcK+iDQooXdbrmKMRtxBJ7ldoChSoQQ7yXz0/8A3U+0JJWahzcZQI9Ph8Lmdz3F7+S+icLpRRQZZpNUJiIYWujA6l1WuHS62iBpmXXXO/0W3E9kxPZBi8bW3Y0raA6F43KP1GrYLdpm0aGzrW3E9kooMhn1Jww0wtzbNu6LqGaaRjy+LBzXUByPNacT2Sigz+JqK2iBrv1XQdMQbjaDYrfqrsT2TE9kGcPnveIV/wCSnKe/7NpH1V+J7JieyDgF/h2WjOulqWZY/HV9vJdYnsmJ7IiEU4nsmJ7IqEU4nsmJ7IIXDzJYDAO5KsxPZMT2QUZT/I0+vVdgyYttoyvfdWYnsmJ7IKA+a6MY+tqQ+UvoxgC+t+SuxPZMT2QUTh/w4l4Hnj+fVWMy8MZ/vVuu8T2QtNeSDpUS6Vkri4kgnrVK9VHxhMCC0xnqOEHLdKxjgWk2DYtcjRRBoBs8nldu8fJ2OOPkovUAjZpHT/lBB0UTjZyPqrYomxNxbdXe67RAREQEREBQpUIHmFnmhc+YODQSC0h2VFtdVoKbcIKZY5nOJjlxBHSly2LUUQ6cHghtVutG3CbcIKGRTgtynsA7iuq0KNuE24QSijbhNuEEoo24TbhBKqlbITcbqVm3CbcIKPDnv+2H2XRZNQqUXVHbqVbtwm3CClsc1U6W+9KWxygjKWxe4pW7cJtwglFG3CbcIJRRtwm3CCUUbcJtwgiRpcwhponzVTmT5kskFE9CFdtwm3CCl7dRiMZASBvt1VjA4N+N2R5pdbcJsglUOklGpDAz4OaP3v06d1eqHamtQIsD9fz86oJMkoL/ANnYBpvdSySRzgHRFourtQdQA54LHU0gbC7Ue8tN0x59OqC9FSNQ0loxcMjQsK5AREQEREBQpUIHmFlm1ohn8N0bq2+Py3WkvbyD6rjxv8P/ANBD+so9pjY+BJW1it282FfpNV7y1x8N0ZaQKd16Lvxv8P8A9BBLvuAP/YJq4tRceI3kfcJ4jeR9wiO0XHiN5H3CeI3kfcIO0XHiN5H3CeI3kfcIO0XHiN5H3CZjkfcIO0XGY5H3CZjkfcIO0XOY7fdMvy0HSLnMdvumY5H3CDpFzmOR9wmY5H3CDpFzmOR9wmY7fdB0i5yH4Uy/LQdIei5y/LTL8tB0qjOBOIsHZHofKufzlWWOQuThmHGsgKvsg4OojDnA38JAOyls8bnYh2/l+ei7+Df93fqnwf4dkEkA1Y6dFKjJvITJvIQSijJvITJvIQSijIchMhyEEqEschcNcd8sRvtR8kHj6xmvdqIDpJGNhBHig1ZF71twvSjJ8JwY4Al3UmtkRWsx290gxwex21Gz+qjObb4oe+5RFGk5y/NFdc+agPm83QjfyJREF2bfmH3TNvzD7oiBm35h90zb8w+6Igq1DgY9iDuPNYmNmEzi5wMe9D8CIrGfJMuYAMYBPBNKZQ8wvEdCQt2+qImfdZ1xoWyMjHjFwN2cnXSokfrG+0w5jmO09jrJtW2wHPU7ois8Zi9XdbjRJI3ChERkREQF0ERCOwukRZdILLFHP40kj3upzaDT0BREXVrWzAHN7SaNUKoqP6zzF5UDf5wiIJYNRkMzFj51dqw5WMSAPOx1REFTm6g+Li4C6w7KvHW3ARJEAP7UOFk7+RCIgtcNQTJiWNG2Hn9bSRs5rw3sG29tu0RBzMCWttjnkD+A1uq2tPisPgzbV/FsPqERBXqma4a6KSGYDTADKOtyb38uP9FtKIg//9k=" alt="العمل الدنيوي" class="content-img img-left">
                     <p>قضيت حياتي العملية في مجال التسويق وإدارة الأعمال والاستيراد والتصدير. أعمل حالياً في مجال الاستيراد والتصدير والشحن الدولي من وإلى تركيا.</p>
                     <p>مؤخراً تخصصت أيضاً في مجال البنوك الدولية والـ Fintech ولدي مشروع طموح في هذا المجال تحت التأسيس. أثناء حياتي العملية أتيحت لي فرصة العمل بشركات عالمية وتدربت على يد أكبر مدربين بالعالم في مجال إدارة الأعمال والعلاقات، الأمر الذي أثر في تكويني ووسع آفاقي وأفادني كثيراً في التعامل مع الناس ومع نفسي.</p>
                 </div>
+
                 <div class="highlight-box">
                     <h3>الأخروي:</h3>
-                    <img src="img2.jpg" alt="العمل الأخروي - محاضرة" class="content-img img-right">
+                    <img src="data:image/jpeg;base64,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"العمل الأخروي - محاضرة" class="content-img img-right">
                     <p>مهتم جداً بالدعوة والعلم الشرعي تعليماً وتعلماً وهذا الجانب يشغل نصف يومي. في بداية حياتي أكرمني الله بالتفرغ لطلب العلم الشرعي على كبار علماء السعودية مثل: الشيخ محمد بن عثيمين، وسليمان العلوان، وخالد المصلح، وعبد الرحمن الدهش، وغيرهم.</p>
                     <p>ومؤخراً أتيحت لي دراسة كتب شرعية متقدمة في الفقه المقارن وأصول الفقه مع الشيخ محمد صالح الفرسي بمدينة قونيا بتركيا تمهيداً لمشروع علمي دعوي قريب بإذن الله. استطعت الدمج بين الدعوة والتربية الإيمانية وإدارة الأعمال وقمت بعمل دورات عديدة في هذه الموضوعات داخل وخارج مصر.</p>
                 </div>
             </div>
         </div>
+
+        <!-- Second: Looking For -->
         <div class="section">
             <div class="section-title"><span>🔍</span> ثانياً: أبحث عن</div>
             <div class="content-block">
                 <p>أبحث عن 3 أشياء (دين - طباع - شكل):</p>
+                
                 <h3>ذات الدين:</h3>
                 <p>لا أستطيع الارتباط إلا بمتدينة ملتزمة.. إنسانة تقبل بالإسلام مرجعاً لحياتنا في السراء والضراء.. صحيح كلنا يعترينا التقصير والزلل لكن في الأساس أرغب بإنسانة متدينة/ملتزمة، فمثلاً لا أستطيع الارتباط بمسلمة تستبيح مشاهدة الأفلام والمسلسلات وسماع الغناء والاختلاط بالرجال أو تتساهل في حجابها إلخ.</p>
+
                 <h3>الطباع:</h3>
                 <p>الطباع التالية شديدة الأهمية:</p>
                 <ul>
@@ -95,6 +288,7 @@
                     <li><strong>ذكية أنثوياً:</strong> (أستطيع الأنس بالكلام معها.. تفهمني وأفهمها.. وأنثى ذات دلال تعرف كيف تحفر في عقل وقلب زوجها ذكريات وأوقات ترغمه على الاشتياق لها والرغبة في العودة للبيت).</li>
                 </ul>
                 <p>في المقابل غير مهتم بشهادتها ولا جنسيتها ولا مستواها الاجتماعي ولا ماضيها سواء كانت مطلقة أو أرملة (يفضل بكر طبعاً لكن ليس شرطاً).</p>
+
                 <h3>الشكل:</h3>
                 <p>رغم بساطة طلبي في الشكل إلا أنه عملياً نادر للأسف.. الجمال الصارخ ليس شرطاً أبداً… طلبي الحقيقي هو (الخلو من العيوب).. كل ما أطلبه ألا أصطدم بعيوب منفرة مثل:</p>
                 <ul>
@@ -109,14 +303,17 @@
                 </ul>
                 <p>الخ مشاكل الجسم والبشرة.. ببساطة بشرة ناعمة خالية من العيوب وجسم متناسق. لا يلزم أن تكون شقراء ولا ذات عيون ملونة ولا أي شيء أكثر من (إذا نظر إليها سرّته) كيف ستسرني إذا كانت رفيعة جداً أو بدينة أو مشعرة الخ.</p>
                 <p>بالغ اعتذاري للتأكيد على هذه التفاصيل لأني فعلاً حريص على مشاعر بنات المسلمين ولا أحب لها أن ترى مني عزوفاً يجرحها.</p>
+
                 <h3>السن:</h3>
                 <p>صحيح أني في أواخر الأربعينات لكن شكلي وحالتي الصحية أصغر بكثير من سني الحمد لله، وبالتالي يفضل ألا يتجاوز عمرها أوائل الثلاثينات لكن دائماً هناك استثناءات فأحياناً تكون المرأة أربعينية لكن لا زالت محافظة على قوامها ونعومتها وصحتها فتبدو أصغر بكثير.. لكن بوجه عام يفضل ألا تتجاوز أوائل الثلاثينات.</p>
             </div>
         </div>
+
+        <!-- Third: My Traits -->
         <div class="section">
             <div class="section-title"><span>🤍</span> ثالثاً: صفاتي</div>
             <div class="content-block clearfix">
-                <img src="https://z-cdn-media.chatglm.cn/files/e00280d5-dbcf-4e89-a3f5-cab5521d308b.jpg?auth_key=1884568976-2be87c226b074e64b84a104f399e7811-0-81b0e0d571a6041ab9904365831fd964" alt="صفاتي" class="content-img img-left">
+                <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCADHASwDASIAAhEBAxEB/8QAGwAAAgMBAQEAAAAAAAAAAAAAAQIAAwQFBgf/xAA0EAACAgEDAwIFAgUFAAMAAAAAAQIDEQQSIQUxQRNRIjJhcYFCkQYUI1KhFTNDYrEkwdH/xAAYAQADAQEAAAAAAAAAAAAAAAAAAQIDBP/EACARAQEBAQADAQEBAAMAAAAAAAABAhESITEDQRMyUXH/2gAMAwEAAhEDEQA/APKJjJiBJUfIdwhBGfcHcIEAfJMiobgDRBBlAzkAYKQENkQTBMMJAAEGJgAGSZG2gwgCJjKTFwTABYpsKmVchEfVuUwlSkMpAD4CIpDJiMyDkXJMgDoZFe4O4QWZJkr3E3AFmRGxdwGwAtitgbYryMI2LkjTFwxkybWFLktkuCuPc0s4k2xB2BCIF2k2jkAybWBdywX9QgLjwLFZHm+BIPDAG2MmGSc8cEhLLAJyHLLMBjDdJJLliPh9NQ725N7K4/NJ+DfCOnogpV1KU3ynZ8TX47FLwq1X8tcOX9WL6ll8niPwr5V7IyttaScaP9Qu3Oe9RXs4r9kiPqknL4qa5xT4UoIxSqtT5i/2F2vsw5B7bbbdDd8UqXVJ9/TfC/BmnpX6craZKyuPfHDj90VSUk+f3LdLbOqW+vGYrn7D+fC/9UELNZtVkZwSSms4Xgo3Fz2i+jkwLuDuGBCLkOQA5YcsXIciBgi5JkAcgm4O4QNkmRNwNwA+QCbwbxg4BHMG9hwdLNfCVRLbPlKoG2/qIcJXN8kUiTWZCInkZCAiL5xhY/MI0m2LHhlwkkAJJ5ZE8MZwfdEjDL5Ajwnl4L4PDb9kUqKTLP0smri9f1OOGeg0Girrqg5LLaPM1TcZLuucnptBfvrS8o5/17HR+XtunXVsxtX7GO3TUyT+BFmo1lNGFbNJvwZn1TTPhWLL+hlJf41lk+sl+hjJfAiqrRRjYoSXMvLOj/MVvlPKKLNfGi2M1JJp+TSXXwtZz9Yeqad06elSjFSy3xLwcxLg7PX7a76dPbXKMk89vDOOux0Y/wCLk19TaDaMQpJcEwxiAC8h5CyAAIEABMk5Au44EXkHI4JdgARWRtgtZaI4TYDYWEF0+M9vESuBZd2KlLBvv6zhmuQbVgsUJuOdkse+BcNPkkdKu46FcXkZcIAjFg+WM3wVeRGuymRexTkO5iPrSsYAUKbD6jFw+rkiyC3RkvpkzKxnT6WnKqydcYStyorcs4ROrydXjPleRjS8rx5PRdOj6ekjLy+WcuVXqKcpQhGcP7fJ2tHj0IceDn/TXY6MY8a59uPVlZbBzk/C8GO5OduPSSX0R6KyNTg+EsmarT1uzc4/ChZ3xdz0vTtE4aeXqpbpdvojlX1OF1m+MW457npFbFSWZKK8HI18ITuco8ryGNe/ZXPrjkXc6VT27czx9OxSux0+oQq/0un0+Jxs+JfddzmHVn3HJucqEIQpKByAgBGyZIAQHIGyAfYCSI+SuIz4AGyCT4JkWb4AGr7FiZXX2LEKqg5JkgRGyWvIdND1dTVB9pSSK5vJq6THf1PTr/ujb7WN+PoVGlpjRGOyOMews9BpJ/NVB/gvlHNaSeCpwkpYUg1u5vxy63ZfjNPoWhs/4IfhHkv4g0NWh1UYUrCks4Pd1KcX8TyjxX8Vz3dTS9oj72d40xrriCMsxiJWyW4BAFIRxCEZAAnQ6PZjVem3hWLC+/gwLsSMnGSlF4aeUydTs4vOvGyvRX0rS0zbw5Sf+PYv0N2aUs8o5l2ulqaYKUcNd37sbR6j05LPk5bi89uvzl16dtpSfIs3lquHnuCuyMo8NcmHX3yhJV1fNLvgjM7eNLrkU9SrUL93qOcksL/qUae575RsbzLt9SyyuUVutujB4+VLLMt2ZLcp7seWjfM9cY67L1usgp6eafOeyOctPa1lRZuqsT2LPK5Z0qYx9NLCN/wz5Wyub99c9x5102r9DA65r9L/AGPTOuD/AEoX0a3+lHT/AIz/ALc3+teaxJd0/wBgHevqgnhRDDS1TjlxJ/yneSq87J3jz+SZPQS6fS/CMt2l08PYV/Kz+nN+Xxycgb4OlDR02PCwVa3QqivcmT/nedVdcvKxQBN8kj2JOTl4MzFSysAm+CRT74Fm88ga2DWB1Je5lyTc/cXB1sTQcoxb37k3y9xeJ+RZdzR07UrSa2q6SzGL5M0u43g0jO+3s5/xNpZ4UZNfgaHXdNLn1MP7njVYsYaD6kfYy3+fle9c+vxlvXv9L1bT2J/1V+547rl8dR1SyUHmPCMSnHGcCNrOUa59Z40xjxGXYqHk8oQTVApgDgAKY2EKkNgS5QwRdyyumy2W2uEpy9orJ3OldBnFvVdRqddMFlQlw5P6r2FbwvrJ6LrohK2LUpLKj7L3Mzk4yyjoa6136lS/uyc23iTM57bX0sjqZx7SfBZTqd1ylN9+MmB9yyKxHOe5VzEzdbtTZCTTUtzMm7Cw2VtvJJPhBM8Gt9vWnSSxZyegh8qON0jTrV6r029rayn7M7/8ndTDEo5S8rk3/Gya9sf17cqgxi5PgOC+qKisnVrXI5szrk62cqZrhvJp0yk6k8HSdNdy+JJiShGuO1GE1zXW1nZxgtlhGOVSnZzybNTHcuDErlGeJeDXVn9P85eeglS4WZgVdSm3pkn3LnfusxDkzdVyq4p+WR65eHrvrrmpkfJIpvxwI5YfBzqXpNL6MpsGi52cLwJKXGGhGQgCDSICAAA3kbeL5GwhgMhTA+Awx5AliWUHANyJuQGEuEINN5AhBEhkjVoOn6jX2bNPW5Y7yfEY/dnq+nfw5pNJiepf8xavD4ivx5JupDk68voul6vXP/49MpL+58RX5PR6D+F9PSlPXWerP+yLxFf/AKdyVmI4WIxXCS4KpznXFyhGM5ezeDO6tXMrqKaqIbaaoVx9oxwYOuWyWnUE+7DPrCoeNTprK/qmmgWW1a6tWQy4PPddg5Tn15z0999C95Y/yDqvT7KbHOK3Qk+51Vo0tRB4eYvdH648G2SjbHw0zPWrnXW8k1OPDuOJDcHZ6p01QzbWuPKORKtm2dTU6w1i5VvPPuRPPA2x5NVHT5zj6jwo9/uWjjT0Zypvjcl8rPaYhqKozg3zymvB5OuKVajWuOOPc3QjqMc6iddf9sHgnnVOjfCKni+Ki2/mg+fyirUUXQq3UYtX/Xv+xmgmoPu/u8j12zhzGTQ/LUnOl4T6XR6iSi/UTT9mNKXqSeHwaf6Wthtt+GzxOPc4+rjf0/U7LHmuXMZrtJF5130jWeNUuWzPZpYTecDV6iElnciz1Ivyjt5Ocrm8rL6VV6eFfZHK6zL+pFHa3L3OB1eW7UJEfpyZ9Hm3WvbNC5QhKOM5KGFrgU5HSsqm4SePIk+48VhZK59wIAEIAQhAAAXcdrHIi7jN54GACg4AwCBAQQFhim3wBdzf0uj+Y19MMcbsv7IVvDk69h0mhaPRV1RXjMvu+5tk/DZnT5SRbJ/Dkw+tkl2Q6WRFzGP2LIrgArtrjJYkk0/DRis0bobnpJem33g+Ys6bSYrhFrsOUORPqN1DSu0yT8NPgai13WT2wa/Vxykb7tLXfW65ZSa/YydPrs0k51WRym/hmuzQ7JYJbKWzEk4tZXk4mt0XpzzWntfj2O7qJQrv2TWFLlMLhBp5MJbit/Wo81Vo5WWQi1jc/wDB2XSvTcEuNuEb9DooRlO6S3OXwxz4Rddp64RlN8exvNdYanK4/T6ZVwmrEsp8M1NZ4GwlHgkUaJLJYjgQeYEhAY8YwPdXDW6WWnueM/LL+1+GLnkLxnCCm8fa7tPdOqbalCTi19QLV3LtNna6/od9a1ta5+W1f+M8+1g0mrxjctC19y/UU2Wytnum+REm3wR8DurfRSSDJikbBkk1sZZRVLuNER9wAEIQAhCEAAhoiFqWEMAxfIZAAHQeBAiCeTu/w3D+vbb/AGxwvycJdz038O1NaSU/758fgjfxWPruV88j2TxleMAgvh+rKb5uMG08Z4ZnlrWyvGyP0Q6nFvCks+2Tkau+aitksL6eS/Q0uEHZYnvfbPgfPQ66OSZ5Kt2B4vL7C4DLuJav1Lx3HaYr7NAGbW1Qu0+MPeuU0jm0SlvUNzbk8RBZbZoNZY3Jzhdys8pMXpLdnUfjWI0xc3zlZ7IVz1WdcegltprWeIxWDBddK6eX28IOouds/aK7Is0tP/JL8FycR9CvTOSzPhexJUPOI9jWyLgOjjnyoknyhZQ2o3WySXJhtnl8dhz2FM5bcsilgqvniUY+7Q0Xl5LJokk6lCSUoWJqS90eS6joZaPUyr7wfMH7o9VuztXsinqGkWs0yil/UXMH9fYmXg1Ox5GLcOyFby8svmtraaw1wytxWMlsiqKa7ieRnFi4AzLsVvuP4EYEhCAGQkAQAi7lr+UqRY/lA4VgIyZAkyMKFABXc9r0ej0unUprD25f55PJ9O0r1mtrp8N5k/ZeT3EdsIqC4ilhGP6X+NcT+rE1jPsUXqNkWn54ZbFqKbk0ku5nt1EH8tdj+qQsxVY5ycJ0xny1LD+rOtW+yOO5K/qMI4aUFukmscrsdSCl3Q9CNMVyWJYEg8ofJJoyYyQErIw+4AJ6eucWpxT/AAZL4RrliCScvmfl47I0KcrH7Iyt+pLjnLa/yVIQ0U+pLL+Vd/qbkJCKhFJeBkwoEVsLEkxBVbHcuXhGSbiuzNNsvhaMrSLgYredWvZRLsrCS8mWdkVqbJPmK4LqrIWY2+PDLpNKeH9i7OYRfbngphFzkku7NN8VXCMPLIpvL9dp2ar1orEbefz5OZHnP0PT9W0/8xoppL4ofFE83txDHuPvpFnsi5TJBcNDtYiJXywFCCTbTGcI57AfwzGfcZQuxexNi9hgAZXFewNqGYBkzruPLsLHuWTXwjSqCAIEPgKAgruBu9/DlP8AvX9n8kX/AOndT3d3hmPplH8voKYtfE1uf3Zqec5/c59XtbZ9RZ+nHcGfYmVt4JH4efJWfgrFLL6zVGK/Rz9TrwaRxbNQo9XrW7GYYbOlCTz3yGhG1fQO4y+pKPzPK9h4z3diTWuT7IChnlsHYjmkMjvEUZaViSLPU3Sxkqrmozis/uVA2dkTJVuecZyxuy5EDOQkpCynzhFFlu14HIBsZTJ4QJXOSf0M2t1Ko0k7PPZfdlE5+/FUpPnL/wDs16SPDZzNLapQdT88x+506JpVY7Njl7CdXQLM3Jvt2GcXffJv5UZdDYoynnsomiF2Iba48vuyLPalexyk8R4OD1rp70mri4R212rdFe3uj1FUL3hykox+xyP4hzqKnZCak6X+ceRB5uyOEV192Gcm+7FhwVPiL9S33InlBlyhYPjBUI2QEAM0YCAAlcB5zTRWuEQaUIQKAkLdPFT1FUWsqU0v8lRv6JT63UquMqHxv8Cvw59e4apisNpFM1Xh7GmZ7tsuJd/cw2QtqlmttowkbdboTXK8ok5bY5bMFeonKz+plN+cB11+yMYJ4cnjJpIVrmai31dbOafZ8HotN8VUJvu4ps81VDdc1HnMsI9QkqaIx8qKQbLKSlvlgtrhLPfgpqWXk1r4YMiqLOeDPKblLCJZJuWEX6eny0V8ItdDcW5cEhFqfHZdvoa5yUY8ozwknLOMNhKDpY9sglnlsOcti2rjDz9hGrT4bM9y3Itk1FYRW3uLhM8Xzg53WbNunrh/dLP7HR7WHJ63j1qo98Rb/wAjK/HLU5J8PB19BqfVqam8zj3ZyMm7puorr31WJL1GsT9seARHWpvpqbd0sHQr1bnBOmtU1vtOay39kcf0a1LPpxb8t8nodJVCdNcko9vYWuLimyVl6/U4eF2yYtZVCGmuxBJ7H/4deyUW3hbsHO1n+3a322P/AMJU8h8MvIdmF4FxhEZXGfR2v2KeYzwyzMo8psWyxyXxL8hILRABSTJkoIAgACohCDQKCQgGjOn0O6Vd1qgo7nDO9+EiEJ18PP11I6m6Scp7Zpd8cMH+oQjw8r8EIPOZYq0/q72mor7lfUKVdp1auHWufqQgvh1X0uEVZGb528/k6rm7ZY8EIRr6c+NlFWIj2S2x+pCET6amiO+WX2NyxGPBCFa+iKbJCwjx7EIAWLEeyKrHyQg4FU8Y+pUu6IQolVnEzhdYz/PPPZxWCEGmsSRdpK42auqE/lc1n7EICXoHCFl+IrEfCO3GjEIxTSil8qWEQhnqtIk8Vxwor8HPveZPL4aIQIbyUlx2XLFcOPsQhbIuPAkoMhBhS0NF+GyEGQrnsTBCErj/2Q==" alt="صفاتي" class="content-img img-left">
                 <ul>
                     <li><strong>واسع الصدر:</strong> رزقني الله قدرة كبيرة تلقائية على تجاوز النكد والحزن والاستياء من المسيئين خاصة المقربين؛ طاقتي في الخصام ضعيفة جداً، أسهل إنسان يمكن أن تصالحه، أستيقظ صباحاً وقد نسيتُ أغلب مشاكل ومعارك الأمس.</li>
                     <li><strong>متفهم سهل الطباع:</strong> شخص لين الجانب، يمكن الوصول معي لألف حل عند الخلاف.</li>
@@ -131,20 +328,26 @@
                 </ul>
             </div>
         </div>
+
+        <!-- Fourth: Conclusion (تم تعديل الترقيم من خامساً إلى رابعاً) -->
         <div class="section">
             <div class="section-title"><span>✨</span> رابعاً: خاتمة ومعلومات متفرقة</div>
             <div class="content-block">
                 <p>أدخل هذه العلاقة بمشاعر بريئة فياضة ورغبة جارفة في تأسيس بيت مبني على المودة والرحمة. لم تؤثر السنوات السابقة ولا تجربتي السابقة نهائياً في براءة مشاعري تجاه زوجتي الجديدة بل أظن أن الله ادخر لها الكثير لأجل يعلمه وحكمة.</p>
                 <p><strong>ملحوظة:</strong> أولادي مع والدتهم بالاتفاق ولن يتغير هذا الوضع أبداً.</p>
                 <p>بالغ اعتذاري لو بدت طلباتي صريحة بل جارحة للبعض فيما يخص الشكل.. لكن المتأمل بهدوء يدرك أنني لم أطلب أكثر من (إذا نظر إليها سرّه).</p>
+                
                 <div class="notice-box">
                     إن لم أجد ما أبحث عنه فسأحترم نفسي وأحترم بنات الناس وسأكمل باقي حياتي لرسالتي ودعوتي وجزا الله جميع من ساعدني في البحث خيراً.
                 </div>
             </div>
         </div>
+
     </div>
+
     <footer>
         <p>©  ربنا هب لنا من أزواجنا وذرياتنا قرة أعين 00905376744337</p>
     </footer>
+
 </body>
 </html>
